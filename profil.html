@@ -4,11 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SMKN 4 Tasikmalaya</title>
-    <link
-      rel="icon"
-      type="image/png"
-      href="img/logo.png"
-    />
+    <link rel="icon" type="image/png" href="img/logo.png" />
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@5"
       rel="stylesheet"
@@ -31,39 +27,42 @@
             <tbody>
               <tr>
                 <td class="py-2 px-4 font-semibold">Nama Sekolah</td>
-                <td class="py-2 px-4">:  SMKN 4 Tasikmalaya</td>
+                <td class="py-2 px-4">: SMKN 4 Tasikmalaya</td>
               </tr>
               <tr>
                 <td class="py-2 px-4 font-semibold">NPSN</td>
-                <td class="py-2 px-4">: {{ $identitas->npsn }}</td>
+                <td class="py-2 px-4">: 20276063</td>
               </tr>
               <tr>
                 <td class="py-2 px-4 font-semibold">Alamat</td>
-                <td class="py-2 px-4">: {{ $identitas->alamat }}</td>
+                <td class="py-2 px-4">
+                  : Jl Depok RT 02 RW 05, Kelurahan Sukamenak, Kecamatan
+                  Purbaratu, Kota Tasikmalaya, Provinsi Jawabarat
+                </td>
               </tr>
               <tr>
                 <td class="py-2 px-4 font-semibold">Telepon</td>
-                <td class="py-2 px-4">: {{ $identitas->telepon }}</td>
+                <td class="py-2 px-4">: (0265) 7528981</td>
               </tr>
               <tr>
                 <td class="py-2 px-4 font-semibold">Email</td>
-                <td class="py-2 px-4">: {{ $identitas->email }}</td>
+                <td class="py-2 px-4">: info@smkn4-tsm.sch.id</td>
               </tr>
               <tr>
                 <td class="py-2 px-4 font-semibold">Tahun Berdiri</td>
-                <td class="py-2 px-4">: {{ $identitas->tahun_berdiri }}</td>
+                <td class="py-2 px-4">: 2010</td>
               </tr>
               <tr>
                 <td class="py-2 px-4 font-semibold">No SK</td>
-                <td class="py-2 px-4">: {{ $identitas->no_sk }}</td>
+                <td class="py-2 px-4">: 420/9/SK-BPPT/2012</td>
               </tr>
               <tr>
                 <td class="py-2 px-4 font-semibold">Tanggal SK</td>
-                <td class="py-2 px-4">: {{ $identitas->tgl_sk }}</td>
+                <td class="py-2 px-4">: 06 Februari 2012</td>
               </tr>
               <tr>
                 <td class="py-2 px-4 font-semibold">Kepemilikan</td>
-                <td class="py-2 px-4">: {{ $identitas->kepemilikan }}</td>
+                <td class="py-2 px-4">: Pemerintah Daerah</td>
               </tr>
             </tbody>
           </table>
@@ -77,7 +76,7 @@
         >
           <div class="w-full">
             <h3 class="text-blue-500 font-bold text-2xl mb-2">SEJARAH</h3>
-            <p class="text-white mb-4">{{ $p->sejarah }}</p>
+            <p class="text-white mb-4">Sejalan dengan Program Pemerintah dibidang pendidikan Menengah Kejuruan pada saat itu yakni pemerataan akses ditambah pula dengan banyaknya keinginan masyarakat yang mengharapkan adanya SMK Negeri di daerah Kecamatan Purbaratu Kota Tasikmalaya, terutama untuk menampung tamatan dari SLTP yang ingin melanjutkan ke SMK maka beberapa tokoh masyarakat, unsur pejabat pemerintah di Kecamatan Purbaratu Kota Tasikmalaya mengusulkan kepada pemerintah Kota Tasikmalaya dan Pemerintah Provinsi Jawa Barat, agar berdirinya SMK Negeri di Kecamatan Purbaratu Kota Tasikmalaya.</p>
           </div>
         </div>
       </div>
@@ -87,7 +86,10 @@
         >
           <div class="w-full">
             <h3 class="text-blue-500 font-bold text-2xl mb-2">Visi</h3>
-            <h2 class="text-white mb-4">{{ $p->visi }}</h2>
+            <h2 class="text-white mb-4">
+              Terwujudnya lulusan yang Cerdas, Aktif, Kompetitif, Adaptif dan
+              Produktif berlandaskan Iman dan Takwa (CAKAP BERIMTAK)
+            </h2>
             <h2></h2>
           </div>
         </div>
@@ -98,13 +100,36 @@
         >
           <div class="w-full">
             <h3 class="text-blue-500 font-bold text-2xl mb-2">Misi</h3>
-            <h2 class="text-white">{{ $p->misi }}</h2>
+            <h2 class="text-white" id="misi">
+              1. Menyiapkan Sumber Daya Manusia yang cerdas dan kompeten baik
+              hardskill maupun softskill.
+            </h2>
             <h2></h2>
           </div>
         </div>
       </div>
     </section>
+    <script>
+        const missions = [
+    "Menyiapkan Sumber Daya Manusia yang cerdas dan kompeten baik hardskill maupun softskill.",
+    "Meningkatkan dan mengembangkan aktifitas serta kreatifitas seluruh warga sekolah dalam berbagai kegiatan positif.",
+    "Mewujudkan manajemen pengelolaan yang efektif, efesien, transparan, akuntabel dan layanan prima.",
+    "Menumbuhkan dan mengembangkan potensi dan kemampuan Sumber Daya Manusia yang berdaya saing tinggi melalui berbagai kegiatan akademik maupun non akademik.",
+    "Menyelenggarakan berbagai program kegiatan dalam upaya meningkatkan Sumber Daya Manusia yang mampu menyesuaikan dengan perkembangan.",
+    "Mengembangkan sarana prasarana dan lingkungan sekolah yang menyenangkan sebagai wadah menumbuhkembangkan daya kreasi dan inovasi untuk menghasilkan produk teknologi tepat guna.",
+    "Membangun jiwa wirausaha yang handal melalui pembelajaran Teaching Factory (TEFA) dan Kelas Industri.",
+    "Menjalin dan mengembangkan kemitraan dengan Industri dan Dunia Kerja (IDUKA) serta lembaga lainnya yang relevan.",
+    "Menanamkan dan membudayakan sikap dan perilaku yang baik pada aktivitas di sekolah maupun dalam kehidupan sehari-hari.",
+  ];
 
+  const container = document.getElementById('misi');
+  container.innerHTML = missions.map((m,i) => `
+    
+      <h2 class="text-white mb-4" >${i+1}. ${m}</h2>
+    
+  `).join('');
+
+    </script>
     <my-footer></my-footer>
   </body>
 </html>

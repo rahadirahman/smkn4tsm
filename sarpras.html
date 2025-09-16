@@ -15,8 +15,61 @@
   </head>
   <body>
     <my-header></my-header>
+    <div class="flex items-center justify-center py-10">
+      <h1
+        class="text-center font-bold text-2xl bg-black w-130 text-white py-5 rounded-md shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-4xl"
+      >
+        Sarana Prasarana SMKN 4 Tasikmalaya
+      </h1>
+    </div>
+    <div id="sarpras-container"></div>
 
-    <div></div>
+    <script>
+      const sarpras = {
+        "Ruang Kelas": [
+          { nama_tempat: "Ruang 01", foto: "img/sarpras/lab1.jpg" },
+          { nama_tempat: "Ruang 02", foto: "img/sarpras/lab2.jpg" },
+        ],
+        "Ruang Penunjang": [
+          { nama_tempat: "Perpustakaan", foto: "img/sarpras/perpus.jpg" },
+          { nama_tempat: "Aula Serbaguna", foto: "img/sarpras/aula.jpg" },
+        ],
+      };
+    </script>
+    <script>
+      const container = document.getElementById("sarpras-container");
+      Object.entries(sarpras).forEach(([jenis, listSarpras]) => {
+        const jenisHeader = document.createElement("div");
+        jenisHeader.className = "bg-black";
+        jenisHeader.innerHTML = `
+    <h2 class="text-xl font-semibold py-5 text-white ms-10">${jenis}</h2>
+  `;
+        container.appendChild(jenisHeader);
+
+        const wrap = document.createElement("div");
+        wrap.className = "flex justify-center gap-10 my-10 flex-wrap";
+
+        listSarpras.forEach((item) => {
+          const card = document.createElement("div");
+          card.className =
+            "card bg-black w-96 shadow-sm transform transition duration-300 hover:scale-105 hover:shadow-2xl";
+
+          card.innerHTML = `
+      <div class="h-56 w-full overflow-hidden">
+        <img src="${item.foto}" alt="${item.nama_tempat}"
+             class="w-full h-full object-cover">
+      </div>
+      <div class="card-body text-white">
+        <h2 class="card-title font-drak">${item.nama_tempat}</h2>
+      </div>
+    `;
+
+          wrap.appendChild(card);
+        });
+
+        container.appendChild(wrap);
+      });
+    </script>
 
     <my-footer></my-footer>
   </body>

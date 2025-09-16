@@ -11,7 +11,6 @@ class MyHeader extends HTMLElement {
                 <a href="profil.html" class="hover:text-indigo-600 link-underline">Profil</a>
                 <a href="jurusan.html" class="hover:text-indigo-600 link-underline">Kompetensi Keahlian</a>
                 <a href="sarpras.html" class="hover:text-indigo-600 link-underline">Sarana Prasarana</a>
-                <a href="pegawai.html" class="hover:text-indigo-600 link-underline">Pegawai</a>
                 <a href="eskul.html" class="hover:text-indigo-600 link-underline">Ekstrakulikuler</a>
                 <a href="rombel.html" class="hover:text-indigo-600 link-underline">Rombongan Belajar</a>
                 

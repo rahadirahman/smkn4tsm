@@ -1,26 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SMKN 4 Tasikmalaya</title>
+    <link rel="icon" type="image/png" href="img/logo.png" />
     <link
-      rel="icon"
-      type="image/png"
-      href="img/logo.png"
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
     />
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-<script src="layout.js"></script>
-</head>
-<body>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="layout.js"></script>
+  </head>
+  <body>
     <my-header></my-header>
-
-    <div>
-        
+    <div class="flex items-center justify-center py-10">
+      <h1
+        class="text-center font-bold text-2xl bg-black w-130 text-white py-5 rounded-md shadow-sm transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+      >
+        Rombongan Belajar SMKN 4 Tasikmalaya
+      </h1>
     </div>
+    <div id="rombel-container"></div>
+
+    <script>
+      const rombels = {
+        "Teknik Komputer Jaringan": [
+          { nama_kelas: "X TKJ 1", jml_perempuan: 12, jml_laki_laki: 18 },
+          { nama_kelas: "XI TKJ 2", jml_perempuan: 10, jml_laki_laki: 20 },
+        ],
+        "Rekayasa Perangkat Lunak": [
+          { nama_kelas: "X RPL 1", jml_perempuan: 15, jml_laki_laki: 15 },
+          { nama_kelas: "XI RPL 2", jml_perempuan: 14, jml_laki_laki: 16 },
+        ],
+      };
+    </script>
+    <script>
+      const container = document.getElementById("rombel-container");
+      Object.entries(rombels).forEach(([jurusan, listRombel]) => {
+        const jurusanHeader = document.createElement("div");
+        jurusanHeader.className = "bg-black";
+        jurusanHeader.innerHTML = `
+    <h2 class="text-xl font-semibold py-5 text-white ms-10">${jurusan}</h2>
+  `;
+        container.appendChild(jurusanHeader);
+
+        const wrap = document.createElement("div");
+        wrap.className = "flex justify-center gap-10 my-10 flex-wrap";
+
+        listRombel.forEach((rombel) => {
+          const card = document.createElement("div");
+          card.className =
+            "card bg-black w-96 shadow-sm transform transition duration-300 hover:scale-105 hover:shadow-2xl";
+          card.innerHTML = `
+      <div class="card-body text-white">
+        <h2 class="card-title font-drak">${rombel.nama_kelas}</h2>
+        <p>Anggota Rombel : ${rombel.jml_perempuan + rombel.jml_laki_laki}</p>
+        <p>Perempuan : ${rombel.jml_perempuan}</p>
+        <p>Laki - Laki : ${rombel.jml_laki_laki}</p>
+        <div class="card-actions justify-end">
+          <button class="btn btn-primary">Selengkapnya</button>
+        </div>
+      </div>
+    `;
+          wrap.appendChild(card);
+        });
+
+        container.appendChild(wrap);
+      });
+    </script>
 
     <my-footer></my-footer>
-    
-</body>
+  </body>
 </html>
