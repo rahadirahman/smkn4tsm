@@ -1,21 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-<script src="layout.js"></script>
-</head>
-<body>
+    <link rel="icon" type="image/png" href="img/logo.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="layout.js"></script>
+  </head>
+  <body>
     <my-header></my-header>
 
-    <div>
-        
+    
+  <div class="flex items-center justify-center py-10">
+    <h1 class="text-center font-bold text-2xl bg-black w-130 text-white py-5 rounded-md shadow-sm transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+      Ekstrakurikuler SMKN 4 Tasikmalaya
+    </h1>
+  </div>
+    <div id="eskul" class="flex justify-center gap-15 flex-wrap px-4">
     </div>
 
+    <script>    
+  const eskulData = [
+    {
+      nama: "PASKIBRA",
+      jadwal: "Rabu",
+      detail: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae nemo illo quis nam repellendus vero officiis",
+      gambar: "storage/berita1.jpg"
+    },
+    {
+      nama: "PKS",
+      jadwal: "Senin",
+      detail: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae nemo illo quis nam repellendus vero officiis",
+      gambar: "storage/berita2.jpg"
+    },
+    {
+      nama: "Pramuka",
+      jadwal: "Selasa",
+      detail: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae nemo illo quis nam repellendus vero officiis",
+      gambar: "storage/berita3.jpg"
+    }
+  ];
+
+  const container = document.getElementById("eskul");
+
+  eskulData.forEach(item => {
+    const card = document.createElement("div");
+    card.className = "card bg-gray-900 w-96 shadow-lg md:w-1/4 my-10 transform transition duration-300 hover:scale-105 hover:shadow-2xl";
+
+    card.innerHTML = `
+      <figure>
+        <img src="${item.gambar}" alt="${item.nama}" class="w-full h-full object-cover">
+      </figure>
+      <div class="card-body text-white p-4">
+        <h2 class="card-title">${item.nama}</h2>
+        <p class="text-title">jadwal : ${item.jadwal}</p>
+        <h2 class="card-title">${item.detail}</h2>
+      </div>
+    `;
+
+    container.appendChild(card);
+  });
+</script>
     <my-footer></my-footer>
-    
-</body>
+  </body>
 </html>

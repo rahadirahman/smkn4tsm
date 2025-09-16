@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SMKN 4 Tasikmalaya</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="img/logo.png"
+    />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 <script src="layout.js"></script>
 </head>
-<body>
+<body class="bg-gray-200">
     <my-header></my-header>
 
     <div>
@@ -42,35 +47,35 @@
   </div>
 
   <div class="flex justify-center gap-15 my-20 flex-wrap">
-    <div class="card bg-gray-700 w-75 shadow-lg my-10 transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+    <div class="card bg-black w-75 shadow-lg my-10 transform transition duration-300 hover:scale-105 hover:shadow-2xl">
       <div class="card-body items-center p-6 text-center">
         <h2 class="card-title">Guru</h2>
         <h1 class="text-4xl font-bold counter" data-count="120">0</h1>
       </div>
     </div>
 
-    <div class="card bg-gray-700 w-75 shadow-lg my-10 transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+    <div class="card bg-black w-75 shadow-lg my-10 transform transition duration-300 hover:scale-105 hover:shadow-2xl">
       <div class="card-body items-center p-6 text-center">
         <h2 class="card-title">Siswa</h2>
         <h1 class="text-4xl font-bold counter" data-count="980">0</h1>
       </div>
     </div>
 
-    <div class="card bg-gray-700 w-75 shadow-lg my-10 transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+    <div class="card bg-black w-75 shadow-lg my-10 transform transition duration-300 hover:scale-105 hover:shadow-2xl">
       <div class="card-body items-center p-6 text-center">
         <h2 class="card-title">Konsentrasi Keahlian</h2>
         <h1 class="text-4xl font-bold counter" data-count="10">0</h1>
       </div>
     </div>
 
-    <div class="card bg-gray-700 w-75 shadow-lg my-10 transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+    <div class="card bg-black w-75 shadow-lg my-10 transform transition duration-300 hover:scale-105 hover:shadow-2xl">
       <div class="card-body items-center p-6 text-center">
         <h2 class="card-title">Ekstrakurikuler</h2>
         <h1 class="text-4xl font-bold counter" data-count="15">0</h1>
       </div>
     </div>
 
-    <div class="card bg-gray-700 w-75 shadow-lg my-10 transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+    <div class="card bg-black w-75 shadow-lg my-10 transform transition duration-300 hover:scale-105 hover:shadow-2xl">
       <div class="card-body items-center p-6 text-center">
         <h2 class="card-title">Rombongan Belajar</h2>
         <h1 class="text-4xl font-bold counter" data-count="30">0</h1>
@@ -85,12 +90,7 @@
       Berita SMKN 4 Tasikmalaya
     </h1>
   </div>
-
-<section class="py-10">
-  <h1 class="text-center text-2xl font-bold mb-6">Berita SMKN 4 Tasikmalaya</h1>
-
   <div id="berita-container" class="flex justify-center gap-15 flex-wrap px-4">
-  </div>
 </section>
 
   </div>
@@ -99,18 +99,23 @@
   const beritaData = [
     {
       tanggal: "01-09-2025",
-      judul: "Kegiatan Penerimaan Siswa Baru 2025",
-      gambar: "storage/berita1.jpg"
+      judul: "SMKN 4 Tasikmalaya Koneksikan Iduka dengan Pencari Kerja",
+      gambar: "img/berita/berita1.jpg"
     },
     {
       tanggal: "05-09-2025",
-      judul: "Prestasi Siswa dalam Lomba Nasional",
-      gambar: "storage/berita2.jpg"
+      judul: "Honda Resmikan Safety Riding Lab di SMKN 4 Tasikmalaya, Ciptakan Bibit Keselamatan di Jawa Barat",
+      gambar: "img/berita/berita2.jpg"
     },
     {
       tanggal: "10-09-2025",
-      judul: "Kegiatan LDKS 2025",
-      gambar: "storage/berita3.jpg"
+      judul: "Siswa SMKN 4 Tasikmalaya Adu Inovasi dan Kreativitas di Expo Creanova",
+      gambar: "img/berita/berita3.jpg"
+    },
+    {
+      tanggal: "10-09-2025",
+      judul: "Sinergi Bagi Negeri, DAM Kerjasama dengan SMKN 4 Tasikmalaya Terapkan KTBSM Sepeda Motor Astra Honda",
+      gambar: "img/berita/berita4.jpg"
     }
   ];
 

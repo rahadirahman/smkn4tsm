@@ -1,51 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SMKN 4 Tasikmalaya</title>
     <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@5"
-      rel="stylesheet"
-      type="text/css"
+      rel="icon"
+      type="image/png"
+      href="img/logo.png"
     />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script src="layout.js"></script>
-  </head>
-  <body>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<script src="layout.js"></script>
+</head>
+<body>
     <my-header></my-header>
 
-    <section class="">
-      <div class="flex items-center justify-center py-10">
-        <h1
-          class="text-center font-bold text-2xl bg-black w-130 text-white py-5 rounded-md shadow-sm transform transition duration-300 hover:scale-105 hover:shadow-2xl"
-        >
-          Kompetensi Keahlian SMKN 4 Tasikmalaya
-        </h1>
-      </div>
-      <div class="flex justify-center gap-15 flex-wrap">
-        <div
-          class="card bg-black w-96 shadow-lg md:w-1/4 my-10 transform transition duration-300 hover:scale-105 hover:shadow-2xl"
-        >
-          <figure>
-            <img
-              src="{{ asset('storage/'. $jurusan->foto) }}"
-              alt=""
-              width="100px"
-              class="bg-white rounded my-5"
-            />
-          </figure>
-          <div class="card-body text-white">
-            <h2 class="card-title">{{ $jurusan->nama_jurusan }}</h2>
-            <p class="line-clamp-3">{{ $jurusan->pengertian }}</p>
-            <div class="card-actions justify-end">
-              <button class="btn btn-primary">Selengkapnya</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div>
+        
+    </div>
 
     <my-footer></my-footer>
-  </body>
+    
+</body>
 </html>
