@@ -13,16 +13,20 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="layout.js"></script>
   </head>
-  <body >
+  <body>
     <my-header></my-header>
     <div class="flex items-center justify-center py-10">
       <div class="relative inline-block">
-  <span class="absolute top-2 left-2 w-full h-full bg-black  shadow-2xl "></span>
-  <h1 class="relative text-center font-bold text-2xl bg-white w-130 py-5  
-  transform transition duration-300 hover:scale-105 text-blue-500 border-2 border-gray-800">
-    Kompetensi Keahlian SMKN 4 Tasikmalaya
-  </h1>
-</div>
+        <span
+          class="absolute top-2 left-2 w-full h-full bg-black  shadow-2xl "
+        ></span>
+        <h1
+          class="relative text-center font-bold text-2xl bg-blue-100 w-130 py-5  
+  transform transition duration-300 hover:scale-105 text-blue-500 border-2 border-gray-800"
+        >
+          Kompetensi Keahlian SMKN 4 Tasikmalaya
+        </h1>
+      </div>
     </div>
     <div id="rombel-container"></div>
 
@@ -101,51 +105,46 @@
       };
     </script>
     <script>
-      const container = document.getElementById("rombel-container");
-      Object.entries(rombels).forEach(([jurusan, listRombel]) => {
-        const jurusanHeader = document.createElement("div");
-        jurusanHeader.className = "bg-black";
-        jurusanHeader.innerHTML = `
-    <h2 class="text-xl font-semibold py-5 text-white ms-10">${jurusan}</h2>
-  `;
-        container.appendChild(jurusanHeader);
+            const container = document.getElementById("rombel-container");
+            Object.entries(rombels).forEach(([jurusan, listRombel]) => {
+              const jurusanHeader = document.createElement("div");
+              jurusanHeader.className = "bg-black";
+              jurusanHeader.innerHTML = `
+          <h2 class="text-xl font-semibold py-5 text-blue-100 ms-10">${jurusan}</h2>
+        `;
+              container.appendChild(jurusanHeader);
 
-        const wrap = document.createElement("div");
-        wrap.className = "flex justify-center gap-10 my-10 flex-wrap";
+              const wrap = document.createElement("div");
+              wrap.className = "flex justify-center gap-10 my-10 flex-wrap";
 
-        listRombel.forEach((rombel) => {
-  // wrapper card + bayangan offset
-  const wrapper = document.createElement("div");
-  wrapper.className = "relative w-96 my-6";
+              listRombel.forEach((rombel) => {
+        const wrapper = document.createElement("div");
+        wrapper.className = "relative w-96 my-6";
 
-  // span bayangan hitam di belakang card
-  const span = document.createElement("span");
-  span.className = "absolute top-2 left-2 w-full h-full bg-black shadow-2xl rounded";
-  wrapper.appendChild(span);
+        const span = document.createElement("span");
+        span.className = "absolute top-2 left-2 w-full h-full bg-black shadow-2xl ";
+        wrapper.appendChild(span);
 
-  // card utama
-  const card = document.createElement("div");
-  card.className =
-    "relative bg-white w-full shadow-sm transform transition duration-300 hover:scale-105 hover:shadow-2xl border-2 border-gray-800 rounded";
+        const card = document.createElement("div");
+        card.className =
+          "relative bg-blue-100 w-full shadow-sm transform transition duration-300 hover:scale-105 hover:shadow-2xl border-2 border-gray-800";
 
-  card.innerHTML = `
-    <div class="card-body text-black">
-      <h2 class="card-title font-bold">${rombel.nama_kelas}</h2>
-      <p>Anggota Rombel : ${rombel.jml_perempuan + rombel.jml_laki_laki}</p>
-      <p>Perempuan : ${rombel.jml_perempuan}</p>
-      <p>Laki - Laki : ${rombel.jml_laki_laki}</p>
-      <div class="card-actions justify-end">
-        <button class="btn btn-primary">Selengkapnya</button>
-      </div>
-    </div>
-  `;
+        card.innerHTML = `
+          <div class="card-body text-black">
+            <h2 class="card-title font-bold">${rombel.nama_kelas}</h2>
+            <p>Anggota Rombel : ${rombel.jml_perempuan + rombel.jml_laki_laki}</p>
+            <p>Perempuan : ${rombel.jml_perempuan}</p>
+            <p>Laki - Laki : ${rombel.jml_laki_laki}</p>
+            
+          </div>
+        `;
 
-  wrapper.appendChild(card);
-  wrap.appendChild(wrapper);
-});
-
-        container.appendChild(wrap);
+        wrapper.appendChild(card);
+        wrap.appendChild(wrapper);
       });
+
+              container.appendChild(wrap);
+            });
     </script>
 
     <my-footer></my-footer>

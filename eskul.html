@@ -13,60 +13,132 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="layout.js"></script>
   </head>
-  <body class="bg-black">
+  <body>
     <my-header></my-header>
 
-    
-  <div class="flex items-center justify-center py-10">
-    <h1 class="text-center font-bold text-2xl bg-black w-130 text-white py-5 rounded-md shadow-sm transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-      Ekstrakurikuler SMKN 4 Tasikmalaya
-    </h1>
-  </div>
-    <div id="eskul" class="flex justify-center gap-15 flex-wrap px-4">
-    </div>
-
-    <script>    
-  const eskulData = [
-    {
-      nama: "PASKIBRA",
-      jadwal: "Rabu",
-      detail: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae nemo illo quis nam repellendus vero officiis",
-      gambar: "storage/berita1.jpg"
-    },
-    {
-      nama: "PKS",
-      jadwal: "Senin",
-      detail: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae nemo illo quis nam repellendus vero officiis",
-      gambar: "storage/berita2.jpg"
-    },
-    {
-      nama: "Pramuka",
-      jadwal: "Selasa",
-      detail: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae nemo illo quis nam repellendus vero officiis",
-      gambar: "storage/berita3.jpg"
-    }
-  ];
-
-  const container = document.getElementById("eskul");
-
-  eskulData.forEach(item => {
-    const card = document.createElement("div");
-    card.className = "card bg-gray-900 w-96 shadow-lg md:w-1/4 my-10 transform transition duration-300 hover:scale-105 hover:shadow-2xl";
-
-    card.innerHTML = `
-      <figure>
-        <img src="${item.gambar}" alt="${item.nama}" class="w-full h-full object-cover">
-      </figure>
-      <div class="card-body text-white p-4">
-        <h2 class="card-title">${item.nama}</h2>
-        <p class="text-title">jadwal : ${item.jadwal}</p>
-        <h2 class="card-title">${item.detail}</h2>
+    <div class="flex items-center justify-center py-10">
+      <div class="relative inline-block">
+        <span
+          class="absolute top-2 left-2 w-full h-full bg-black  shadow-2xl "
+        ></span>
+        <h1
+          class="relative text-center font-bold text-2xl bg-blue-100 w-130 py-5  
+  transform transition duration-300 hover:scale-105 text-blue-500 border-2 border-gray-800"
+        >
+          Ekstrakurikuler SMKN 4 Tasikmalaya
+        </h1>
       </div>
-    `;
+    </div>
+    <div id="eskul" class="flex justify-center gap-15 flex-wrap px-4"></div>
 
-    container.appendChild(card);
-  });
-</script>
+    <script>
+            const eskulData = [
+              {
+                nama: "PASKIBRA",
+                jadwal: "Rabu",
+                detail: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae nemo illo quis nam repellendus vero officiis",
+                gambar: "img/eskul/paskibra.jpg"
+              },
+              {
+                nama: "PKS",
+                jadwal: "Senin",
+                detail: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae nemo illo quis nam repellendus vero officiis",
+                gambar: "img/eskul/pks.jpg"
+              },
+              {
+                nama: "Pramuka",
+                jadwal: "Selasa",
+                detail: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae nemo illo quis nam repellendus vero officiis",
+                gambar: "img/eskul/pramuka.jpg"
+              },
+              {
+                nama: "PMR",
+                jadwal: "Selasa",
+                detail: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae nemo illo quis nam repellendus vero officiis",
+                gambar: "img/eskul/pmr.jpg"
+              },
+              {
+                nama: "Perisai Diri",
+                jadwal: "Selasa",
+                detail: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae nemo illo quis nam repellendus vero officiis",
+                gambar: "img/eskul/pd.jpg"
+              },
+              {
+                nama: "English Club",
+                jadwal: "Selasa",
+                detail: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae nemo illo quis nam repellendus vero officiis",
+                gambar: "img/eskul/ec.jpg"
+              },
+              {
+                nama: "IRMA",
+                jadwal: "Selasa",
+                detail: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae nemo illo quis nam repellendus vero officiis",
+                gambar: "img/eskul/irma.jpg"
+              },
+              {
+                nama: "Futsal",
+                jadwal: "Selasa",
+                detail: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae nemo illo quis nam repellendus vero officiis",
+                gambar: "img/eskul/putsal.jpg"
+              },
+              {
+                nama: "Basket",
+                jadwal: "Selasa",
+                detail: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae nemo illo quis nam repellendus vero officiis",
+                gambar: "img/eskul/basket.jpg"
+              },
+              {
+                nama: "Voli",
+                jadwal: "Selasa",
+                detail: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae nemo illo quis nam repellendus vero officiis",
+                gambar: "img/eskul/voli.jpg"
+              },
+              {
+                nama: "Sepak Bola",
+                jadwal: "Selasa",
+                detail: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae nemo illo quis nam repellendus vero officiis",
+                gambar: "img/eskul/sepakbola.jpg"
+              },
+              {
+                nama: "Bulu Tangkis",
+                jadwal: "Selasa",
+                detail: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae nemo illo quis nam repellendus vero officiis",
+                gambar: "img/eskul/bulutangkis.jpg"
+              },
+              
+              
+            ];
+
+            const container = document.getElementById("eskul");
+
+      eskulData.forEach(item => {
+        const wrapper = document.createElement("div");
+        wrapper.className = "relative w-96 my-10 md:w-1/4";
+
+        const span = document.createElement("span");
+        span.className =
+          "absolute top-2 left-2 w-full h-full bg-black shadow-2xl";
+        wrapper.appendChild(span);
+
+        const card = document.createElement("div");
+        card.className =
+          "relative bg-blue-100 w-full shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl border-2 border-gray-800 ";
+        card.innerHTML = `
+          <figure class="h-56 w-full overflow-hidden">
+            <img src="${item.gambar}" alt="${item.nama}" class="w-full h-full object-cover">
+          </figure>
+          <div class="card-body text-black p-4">
+            <h2 class="card-title font-bold">${item.nama}</h2>
+            <p class="text-sm">Jadwal : ${item.jadwal}</p>
+            <h2 class="card-title">${item.detail}</h2>
+          </div>
+        `;
+
+        wrapper.appendChild(card);
+
+        container.appendChild(wrapper);
+      });
+    </script>
     <my-footer></my-footer>
   </body>
 </html>

@@ -13,65 +13,107 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="layout.js"></script>
   </head>
-  <body class="bg-black">
+  <body>
     <my-header></my-header>
     <div class="flex items-center justify-center py-10">
-      <h1
-        class="text-center font-bold text-2xl bg-black w-130 text-white py-5 rounded-md shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-4xl"
-      >
-        Sarana Prasarana SMKN 4 Tasikmalaya
-      </h1>
+      <div class="relative inline-block">
+        <span
+          class="absolute top-2 left-2 w-full h-full bg-black  shadow-2xl "
+        ></span>
+        <h1
+          class="relative text-center font-bold text-2xl bg-blue-100 w-130 py-5  
+  transform transition duration-300 hover:scale-105 text-blue-500 border-2 border-gray-800"
+        >
+          Sarana dan Prasarana SMKN 4 Tasikmalaya
+        </h1>
+      </div>
     </div>
     <div id="sarpras-container"></div>
 
     <script>
-      const sarpras = {
-        "Ruang Kelas": [
-          { nama_tempat: "Ruang 01", foto: "img/sarpras/lab1.jpg" },
-          { nama_tempat: "Ruang 02", foto: "img/sarpras/lab2.jpg" },
-        ],
-        "Ruang Praktek Siswa": [
-          { nama_tempat: "Perpustakaan", foto: "img/sarpras/perpus.jpg" },
-          { nama_tempat: "Aula Serbaguna", foto: "img/sarpras/aula.jpg" },
-        ],
-        "Ruang Penunjang": [
-          { nama_tempat: "Perpustakaan", foto: "img/sarpras/perpus.jpg" },
-          { nama_tempat: "Aula Serbaguna", foto: "img/sarpras/aula.jpg" },
-        ],
-      };
+                const sarpras = {
+                  "Ruang Kelas": [
+                    { nama_tempat: "Ruang 01", foto: "img/kelas.png" },
+                    { nama_tempat: "Ruang 02", foto: "img/kelas.png" },
+                    { nama_tempat: "Ruang 03", foto: "img/kelas.png" },
+                    { nama_tempat: "Ruang 04", foto: "img/kelas.png" },
+                    { nama_tempat: "Ruang 05", foto: "img/kelas.png" },
+                    { nama_tempat: "Ruang 06", foto: "img/kelas.png" },
+                    { nama_tempat: "Ruang 07", foto: "img/kelas.png" },
+                    { nama_tempat: "Ruang 08", foto: "img/kelas.png" },
+                    { nama_tempat: "Ruang 09", foto: "img/kelas.png" },
+                    { nama_tempat: "Ruang 10", foto: "img/kelas.png" },
+                  ],
+                  "Ruang Praktek Siswa": [
+                    { nama_tempat: "PPLG - RPS Lab 1", foto: "img/kelas.png" },
+                    { nama_tempat: "PPLG - RPS Lab 2", foto: "img/kelas.png" },
+                    { nama_tempat: "PPLG - RPS Lab 3", foto: "img/kelas.png" },
+                    { nama_tempat: "PPLG - RPS Lab 4", foto: "img/kelas.png" },
+                    { nama_tempat: "PPLG - Gedung PPLG", foto: "img/kelas.png" },
+                    { nama_tempat: "TJKT - RPS Lab 1", foto: "img/kelas.png" },
+                    { nama_tempat: "TJKT - RPS Lab 2", foto: "img/kelas.png" },
+                    { nama_tempat: "TJKT - RPS Lab 3", foto: "img/kelas.png" },
+                    { nama_tempat: "TJKT - RPS Lab 4", foto: "img/kelas.png" },
+                    { nama_tempat: "TBSM - RPS Lab 1", foto: "img/kelas.png" },
+                    { nama_tempat: "TBSM - RPS Lab 2", foto: "img/kelas.png" },
+                    { nama_tempat: "TBSM - RPS Lab 3", foto: "img/kelas.png" },
+                    { nama_tempat: "TBSM - RPS Lab 4", foto: "img/kelas.png" },
+                  ],
+                  "Ruang Penunjang": [
+                    { nama_tempat: "Lobby", foto: "img/kelas.png" },
+                    { nama_tempat: "Ruang Kepala Sekolah", foto: "img/kelas.png" },
+                    { nama_tempat: "Ruang Tata Usaha", foto: "img/kelas.png" },
+                    { nama_tempat: "Ruang Guru", foto: "img/kelas.png" },
+                    { nama_tempat: "Ruang BK", foto: "img/kelas.png" },
+                    { nama_tempat: "Aula", foto: "img/kelas.png" },
+                    { nama_tempat: "Perpustakaan", foto: "img/kelas.png" },
+                    { nama_tempat: "Mesjid Al - Barokah", foto: "img/kelas.png" },
+                    { nama_tempat: "Area Parkir", foto: "img/kelas.png" },
+                  ],
+                };
 
-      const container = document.getElementById("sarpras-container");
-      Object.entries(sarpras).forEach(([jenis, listSarpras]) => {
-        const jenisHeader = document.createElement("div");
-        jenisHeader.className = "bg-black";
-        jenisHeader.innerHTML = `
-    <h2 class="text-xl font-semibold py-5 text-white ms-10">${jenis}</h2>
-  `;
-        container.appendChild(jenisHeader);
+                const container = document.getElementById("sarpras-container");
+                Object.entries(sarpras).forEach(([jenis, listSarpras]) => {
+                  const jenisHeader = document.createElement("div");
+                  jenisHeader.className = "bg-black";
+                  jenisHeader.innerHTML = `
+              <h2 class="text-xl font-semibold py-5 text-blue-100 ms-10">${jenis}</h2>
+            `;
+                  container.appendChild(jenisHeader);
 
-        const div = document.createElement("div");
-        div.className = "flex justify-center gap-10 my-10 flex-wrap";
+                  const div = document.createElement("div");
+                  div.className = "flex justify-center gap-10 my-10 flex-wrap";
 
-        listSarpras.forEach((item) => {
-          const card = document.createElement("div");
-          card.className =
-            "card bg-black w-96 shadow-sm transform transition duration-300 hover:scale-105 hover:shadow-2xl";
+                  listSarpras.forEach((item) => {
+        const wrapper = document.createElement("div");
+        wrapper.className = "relative w-96 my-6";
 
-          card.innerHTML = `
-      <div class="h-56 w-full overflow-hidden">
-        <img src="${item.foto}" alt="${item.nama_tempat}"
-             class="w-full h-full object-cover">
-      </div>
-      <div class="card-body text-white">
-        <h2 class="card-title font-drak">${item.nama_tempat}</h2>
-      </div>
-    `;
+        const span = document.createElement("span");
+        span.className =
+          "absolute top-2 left-2 w-full h-full bg-black shadow-2xl";
+        wrapper.appendChild(span);
 
-          div.appendChild(card);
-        });
+        const card = document.createElement("div");
+        card.className =
+          "relative bg-blue-100 w-full shadow-sm transform transition duration-300 hover:scale-105 hover:shadow-2xl border-2 border-gray-800 ";
 
-        container.appendChild(div);
+        card.innerHTML = `
+          <div class="h-56 w-full overflow-hidden">
+            <img src="${item.foto}" alt="${item.nama_tempat}"
+                 class="w-full h-full object-cover">
+          </div>
+          <div class="card-body text-black">
+            <h2 class="card-title font-bold">${item.nama_tempat}</h2>
+          </div>
+        `;
+
+        wrapper.appendChild(card);
+        div.appendChild(wrapper);
       });
+
+      container.appendChild(div);
+
+                });
     </script>
 
     <my-footer></my-footer>
