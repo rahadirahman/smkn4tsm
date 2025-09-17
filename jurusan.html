@@ -13,15 +13,17 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="layout.js"></script>
   </head>
-  <body>
+  <body >
     <my-header></my-header>
 
     <div class="flex items-center justify-center py-10">
-      <h1
-        class="text-center font-bold text-2xl bg-black w-130 text-white py-5 rounded-md shadow-sm transform transition duration-300 hover:scale-105 hover:shadow-2xl"
-      >
-        Kompetensi Keahlian SMKN 4 Tasikmalaya
-      </h1>
+      <div class="relative inline-block">
+  <span class="absolute top-2 left-2 w-full h-full bg-black  shadow-2xl "></span>
+  <h1 class="relative text-center font-bold text-2xl bg-white w-130 py-5  
+  transform transition duration-300 hover:scale-105 text-blue-500 border-2 border-gray-800">
+    Kompetensi Keahlian SMKN 4 Tasikmalaya
+  </h1>
+</div>
     </div>
     <div id="jurusan" class="flex justify-center gap-15 flex-wrap px-4"></div>
     <script>
@@ -55,23 +57,33 @@
 
       const container = document.getElementById("jurusan");
 
-      jurusanData.forEach((item) => {
-        const card = document.createElement("div");
-        card.className =
-          "card bg-gray-900 w-96 shadow-lg md:w-1/4 my-10 transform transition duration-300 hover:scale-105 hover:shadow-2xl";
+jurusanData.forEach((item) => {
+  
+  const wrapper = document.createElement("div");
+  wrapper.className = "relative w-96 md:w-1/4 my-10";
 
-        card.innerHTML = `
-      <figure>
-        <img src="${item.gambar}" alt="${item.nama}" class="bg-white rounded  my-5">
-      </figure>
-      <div class="card-body text-white p-4">
-        <h2 class="card-title font-bold ">${item.nama}</h2>
-        <p class="text-sm">${item.pengertian}</p>
-      </div>
-    `;
+  const span = document.createElement("span");
+  span.className = "absolute top-2 left-2 w-full h-full bg-black shadow-2xl rounded";
+  wrapper.appendChild(span);
 
-        container.appendChild(card);
-      });
+  const card = document.createElement("div");
+  card.className =
+    "relative bg-white w-full h-[400px] shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl border-2 border-gray-800 rounded";
+
+  card.innerHTML = `
+    <figure>
+      <img src="${item.gambar}" alt="${item.nama}" class="bg-white rounded my-5 mx-auto">
+    </figure>
+    <div class="card-body text-black p-4">
+      <h2 class="card-title font-bold">${item.nama}</h2>
+      <p class="text-sm">${item.pengertian}</p>
+    </div>
+  `;
+
+  wrapper.appendChild(card);
+  container.appendChild(wrapper);
+});
+
     </script>
 
     <my-footer></my-footer>

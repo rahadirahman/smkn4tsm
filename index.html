@@ -13,7 +13,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 <script src="layout.js"></script>
 </head>
-<body class="bg-gray-200">
+<body class="">
     <my-header></my-header>
 
     <div>
@@ -21,74 +21,103 @@
 <section class=" bg-cover bg-no-repeat h-135" style="background-image: url('img/bg1.jpg');">
 </section>
 
-<section>
+<section class="">
   <div class="container mx-auto px-4 py-10">
-    <div class="bg-white shadow-lg rounded-lg p-6 md:p-10 flex flex-col md:flex-row gap-6 items-center transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-
+  <div class="relative">
+    <span class="absolute top-4 left-4 w-full h-full bg-black  shadow-2xl border-2 border-gray-800"></span>
+    <div class="border-2 border-gray-800 relative bg-blue-100 shadow-lg  p-6 md:p-10 flex flex-col md:flex-row gap-6 items-center transform transition duration-300 hover:scale-105 hover:shadow-2xl">
       <div class="md:w-1/2 flex justify-center">
         <img src="img/kepsek.png" alt="Kepala Sekolah" class="rounded-lg w-full max-w-sm object-cover">
       </div>
 
       <div class="md:w-1/2">
         <h3 class="text-blue-500 font-semibold text-lg mb-2">Sambutan Kepala Sekolah</h3>
-        <h2 class="text-gray-800 font-bold text-2xl md:text-3xl mb-4">Kurniawan,S.pd,M.pd</h2>
+        <h2 class="text-gray-800 font-bold text-2xl md:text-3xl mb-4">Kurniawan, S.Pd, M.Pd</h2>
         <h1>Assalamualaikum Warahmatullahi Wabarakatuh</h1>
         <h2>Selamat datang di website resmi SMKN 4 Tasikmalaya. Mari kita bersama-sama membangun pendidikan yang unggul.</h2>
         <h1>Wassalamu'alaikum Warahmatullahi Wabarakatuh</h1>
       </div>
-
     </div>
   </div>
+</div>
+
 </section>
 
-<section class="relative py-12 bg-gradient-to-br from-gray-900 via-gray-700 to-gray-900 text-white overflow-hidden">
+<section class="relative py-12 text-white overflow-hidden ">
   <div class="flex items-center justify-center my-5">
-    <h1 class="text-center font-bold text-2xl">Statistik SMKN 4 Tasikmalaya</h1>
+    <div class="relative inline-block">
+  <span class="absolute top-2 left-2 w-full h-full bg-black  shadow-2xl "></span>
+  <h1 class="relative text-center font-bold text-2xl bg-blue-100 w-130 py-5  
+  transform transition duration-300 hover:scale-105 text-blue-500 border-2 border-gray-800">
+    Statistik SMKN 4 Tasikmalaya
+  </h1>
+</div>
   </div>
-
-  <div class="flex justify-center gap-15 my-20 flex-wrap">
-    <div class="card bg-black w-75 shadow-lg my-10 transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-      <div class="card-body items-center p-6 text-center">
-        <h2 class="card-title">Guru</h2>
-        <h1 class="text-4xl font-bold counter" data-count="120">0</h1>
-      </div>
+  <div class="flex justify-center gap-15 my-20 flex-wrap  text-black">
+    <div class="relative w-[300px] my-10">
+  <span class="absolute top-2 left-2 w-full h-full bg-black shadow-2xl"></span>
+  <div class="relative bg-blue-100 w-full transform transition duration-300 hover:scale-105 hover:shadow-2xl border-2 border-gray-800">
+    <div class="p-6 text-center">
+      <h2 class="text-xl font-semibold">Guru</h2>
+      <h1 class="text-4xl font-bold text-blue-500 counter" data-count="120">0</h1>
     </div>
+  </div>
+</div>
 
-    <div class="card bg-black w-75 shadow-lg my-10 transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+
+    <div class="relative w-[300px] my-10">
+  <span class="absolute top-2 left-2 w-full h-full bg-black  shadow-2xl"></span>
+    <div class="relative bg-blue-100 w-full transform transition duration-300 hover:scale-105 hover:shadow-2xl border-2 border-gray-800">
       <div class="card-body items-center p-6 text-center">
         <h2 class="card-title">Siswa</h2>
-        <h1 class="text-4xl font-bold counter" data-count="980">0</h1>
+        <h1 class="text-4xl font-bold counter text-blue-500" data-count="980">0</h1>
       </div>
     </div>
+    </div>
 
-    <div class="card bg-black w-75 shadow-lg my-10 transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+    <div class="relative w-[300px] my-10">
+  <span class="absolute top-2 left-2 w-full h-full bg-black  shadow-2xl"></span>
+    <div class="relative bg-blue-100 w-full transform transition duration-300 hover:scale-105 hover:shadow-2xl border-2 border-gray-800">
       <div class="card-body items-center p-6 text-center">
         <h2 class="card-title">Konsentrasi Keahlian</h2>
-        <h1 class="text-4xl font-bold counter" data-count="10">0</h1>
+        <h1 class="text-4xl font-bold counter text-blue-500" data-count="10">0</h1>
       </div>
     </div>
-
-    <div class="card bg-black w-75 shadow-lg my-10 transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+    </div>
+    
+    <div class="relative w-[300px] my-10">
+  <span class="absolute top-2 left-2 w-full h-full bg-black   shadow-2xl"></span>
+    <div class="relative bg-blue-100 w-full transform transition duration-300 hover:scale-105 hover:shadow-2xl border-2 border-gray-800">
       <div class="card-body items-center p-6 text-center">
         <h2 class="card-title">Ekstrakurikuler</h2>
-        <h1 class="text-4xl font-bold counter" data-count="15">0</h1>
+        <h1 class="text-4xl font-bold counter text-blue-500" data-count="15">0</h1>
       </div>
     </div>
+    </div>
+    
+    <div class="relative w-[300px] my-10">
+  <span class="absolute top-2 left-2 w-full h-full bg-black  shadow-2xl"></span>
+  <div class="relative bg-blue-100 w-full transform transition duration-300 hover:scale-105 hover:shadow-2xl border-2 border-gray-800">
+    <div class="card-body items-center p-6 text-center">
+      <h2 class="card-title">Rombongan Belajar</h2>
+      <h1 class="text-4xl font-bold counter text-blue-500" data-count="30">0</h1>
+    </div>
+  </div>
+</div>
 
-    <div class="card bg-black w-75 shadow-lg my-10 transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-      <div class="card-body items-center p-6 text-center">
-        <h2 class="card-title">Rombongan Belajar</h2>
-        <h1 class="text-4xl font-bold counter" data-count="30">0</h1>
-      </div>
-    </div>
   </div>
 </section>
 
-<section>
+<section >
   <div class="flex items-center justify-center py-10">
-    <h1 class="text-center font-bold text-2xl bg-black w-130 text-white py-5 rounded-md shadow-sm transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-      Berita SMKN 4 Tasikmalaya
-    </h1>
+    <div class="relative inline-block">
+  <span class="absolute top-2 left-2 w-full h-full bg-black  shadow-2xl "></span>
+  <h1 class="relative text-center font-bold text-2xl bg-blue-100 w-130 py-5  
+  transform transition duration-300 hover:scale-105 text-blue-500 border-2 border-gray-800">
+    Berita SMKN 4 Tasikmalaya
+  </h1>
+</div>
+
   </div>
   <div id="berita-container" class="flex justify-center gap-15 flex-wrap px-4">
 </section>
@@ -122,20 +151,33 @@
   const container = document.getElementById("berita-container");
 
   beritaData.forEach(item => {
-    const card = document.createElement("div");
-    card.className = "card bg-gray-900 w-96 shadow-lg md:w-1/4 my-10 transform transition duration-300 hover:scale-105 hover:shadow-2xl";
+    
+    const wrapper = document.createElement("div");
+    wrapper.className = "relative w-[350px] my-10";
+
+   
+    const span = document.createElement("span");
+    span.className = "absolute top-2 left-2 w-full h-full bg-black shadow-2xl";
+    wrapper.appendChild(span);
+
+   
+   const card = document.createElement("div");
+card.className =
+  "relative bg-blue-100 w-full h-[450px] shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl border-2 border-gray-800 overflow-hidden";
+
 
     card.innerHTML = `
       <figure>
-        <img src="${item.gambar}" alt="${item.judul}" class="w-full h-full object-cover">
+        <img src="${item.gambar}" alt="${item.judul}" class="w-full h-52 object-cover">
       </figure>
-      <div class="card-body text-white p-4">
-        <p class="text-sm">${item.tanggal}</p>
-        <h2 class="card-title">${item.judul}</h2>
+      <div class="p-4 text-black">
+        <p class="text-sm mb-2">${item.tanggal}</p>
+        <h2 class="text-lg font-semibold">${item.judul}</h2>
       </div>
     `;
 
-    container.appendChild(card);
+    wrapper.appendChild(card);
+    container.appendChild(wrapper);
   });
 </script>
 
