@@ -103,6 +103,12 @@
           { nama_kelas: "XII RPL 4", jml_perempuan: 14, jml_laki_laki: 16 },
         ],
       };
+      const semuaNamaKelas = Object.values(rombels)
+  .flat()
+  .map(kelas => kelas.nama_kelas);
+  localStorage.setItem('nama_kelas', JSON.stringify(semuaNamaKelas));
+            console.log('jurusan tersimpan di localStorage:', localStorage.getItem('nama_kelas'));
+
     </script>
     <script>
             const container = document.getElementById("rombel-container");

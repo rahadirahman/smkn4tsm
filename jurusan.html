@@ -58,6 +58,9 @@
                 gambar: "img/jurusan/dkv.png",
               },
             ];
+            localStorage.setItem('jurusan', JSON.stringify(jurusanData));
+            console.log('jurusan tersimpan di localStorage:', localStorage.getItem('jurusan'));
+
 
             const container = document.getElementById("jurusan");
 

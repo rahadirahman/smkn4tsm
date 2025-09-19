@@ -32,7 +32,7 @@
     <div id="eskul" class="flex justify-center gap-15 flex-wrap px-4"></div>
 
     <script>
-            const eskulData = [
+  const eskulData = [
               {
                 nama: "PASKIBRA",
                 jadwal: "Rabu",
@@ -108,6 +108,7 @@
               
               
             ];
+  localStorage.setItem('eskul', JSON.stringify(eskulData));
 
             const container = document.getElementById("eskul");
 

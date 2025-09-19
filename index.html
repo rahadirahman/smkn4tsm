@@ -72,7 +72,7 @@
     <div class="relative bg-blue-100 w-full transform transition duration-300 hover:scale-105 hover:shadow-2xl border-2 border-gray-800">
       <div class="card-body items-center p-6 text-center">
         <h2 class="card-title">Siswa</h2>
-        <h1 class="text-4xl font-bold counter text-blue-500" data-count="980">0</h1>
+        <h1 class="text-4xl font-bold counter text-blue-500" data-count="1300">0</h1>
       </div>
     </div>
     </div>
@@ -82,7 +82,7 @@
     <div onclick="window.location.href='jurusan.html';" class="relative bg-blue-100 w-full transform transition duration-300 hover:scale-105 hover:shadow-2xl border-2 border-gray-800">
       <div class="card-body items-center p-6 text-center">
         <h2 class="card-title">Konsentrasi Keahlian</h2>
-        <h1 class="text-4xl font-bold counter text-blue-500" data-count="10">0</h1>
+        <h1 class="text-4xl font-bold counter text-blue-500" data-count="jumlahJurusan">0</h1>
       </div>
     </div>
     </div>
@@ -92,7 +92,7 @@
     <div onclick="window.location.href='eskul.html';" class="relative bg-blue-100 w-full transform transition duration-300 hover:scale-105 hover:shadow-2xl border-2 border-gray-800">
       <div class="card-body items-center p-6 text-center">
         <h2 class="card-title">Ekstrakurikuler</h2>
-        <h1 class="text-4xl font-bold counter text-blue-500" data-count="15">0</h1>
+        <h1 class="text-4xl font-bold counter text-blue-500" data-count="jumlahEskul">0</h1>
       </div>
     </div>
     </div>
@@ -102,7 +102,7 @@
   <div onclick="window.location.href='rombel.html';" class="relative bg-blue-100 w-full transform transition duration-300 hover:scale-105 hover:shadow-2xl border-2 border-gray-800">
     <div class="card-body items-center p-6 text-center">
       <h2 class="card-title">Rombongan Belajar</h2>
-      <h1 class="text-4xl font-bold counter text-blue-500" data-count="30">0</h1>
+      <h1 class="text-4xl font-bold counter text-blue-500" data-count="jumlahnama_kelas">0</h1>
     </div>
   </div>
 </div>
@@ -188,15 +188,48 @@ card.className =
 document.addEventListener("DOMContentLoaded", () => {
   const counters = document.querySelectorAll(".counter");
 
+
+ 
+const eskul = JSON.parse(localStorage.getItem('eskul')) || [];
+const jumlahEskul = eskul.length;
+
+const jurusan = JSON.parse(localStorage.getItem('jurusan')) || [];
+const jumlahJurusan = jurusan.length; 
+
+const nama_kelas = JSON.parse(localStorage.getItem('nama_kelas')) || [];
+const jumlahnama_kelas = nama_kelas.length; 
+
+console.log('jumlahEskul:', jumlahEskul);
+console.log('jumlahJurusan:', jumlahJurusan);
+console.log('jumlahnama_kelas:', jumlahnama_kelas);
+console.log('rombels tersimpan di localStorage:', localStorage.getItem('nama_kelas'));
+
+
+
+  counters.forEach(counter => {
+  if (counter.getAttribute('data-count') === 'jumlahEskul') {
+    counter.setAttribute('data-count', jumlahEskul);
+  }
+  if (counter.getAttribute('data-count') === 'jumlahJurusan') {
+    counter.setAttribute('data-count', jumlahJurusan);
+  }
+  if (counter.getAttribute('data-count') === 'jumlahnama_kelas') {
+    counter.setAttribute('data-count', jumlahnama_kelas);
+  }
+});
+
+
+ 
   const animateCounter = (el) => {
     const target = +el.getAttribute("data-count");
-    const duration = 2000; // ms
+    const duration = 2000; 
     const increment = target / (duration / 20);
     let current = 0;
 
     const update = () => {
       current += increment;
       if (current >= target) {
+        current = target; 
         el.textContent = target.toLocaleString();
       } else {
         el.textContent = Math.floor(current).toLocaleString();
@@ -210,7 +243,7 @@ document.addEventListener("DOMContentLoaded", () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         animateCounter(entry.target);
-        observer.unobserve(entry.target);
+        observer.unobserve(entry.target); 
       }
     });
   }, { threshold: 0.5 });
@@ -218,9 +251,11 @@ document.addEventListener("DOMContentLoaded", () => {
   counters.forEach(counter => observer.observe(counter));
 });
 </script>
+
+
     </div>
 
     <my-footer></my-footer>
-    
+  
 </body>
 </html>
