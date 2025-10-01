@@ -6,18 +6,26 @@ class MyHeader extends HTMLElement {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <img src="img/logo.png" alt="Logo" width="50px" class="rounded-full">
             <a href="#" class="font-bold tracking-tight text-xl">SMKN 4 Tasikmalaya</a>
-            <nav class="hidden md:flex items-center gap-6 text-sm">
-                <a href="index.html" class="hover:text-indigo-600 link-underline">Beranda</a>
-                <a href="profil.html" class="hover:text-indigo-600 link-underline">Profil</a>
+            <nav class="hidden md:flex items-center gap-6 text-sm" id="navbar">
+                <a href="index.html" class="link-underline hover:text-indigo-600">Beranda</a>
+                <a href="profil.html" class="link-underline hover:text-indigo-600">Profil</a>
                 <a href="jurusan.html" class="hover:text-indigo-600 link-underline">Kompetensi Keahlian</a>
                 <a href="sarpras.html" class="hover:text-indigo-600 link-underline">Sarana Prasarana</a>
+                <a href="guru.html" class="hover:text-indigo-600 link-underline">Pegawai</a>
                 <a href="eskul.html" class="hover:text-indigo-600 link-underline">Ekstrakulikuler</a>
                 <a href="rombel.html" class="hover:text-indigo-600 link-underline">Rombongan Belajar</a>
-                
             </nav>
         </div>
       </header>
     `;
+
+    
+    const links = this.querySelectorAll('#navbar a');
+    links.forEach(link => {
+      if (link.getAttribute('href') === location.pathname.split('/').pop()) {
+        link.classList.add('text-indigo-600', 'font-bold');
+      }
+    });
   }
 }
 

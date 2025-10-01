@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SMKN 4 Tasikmalaya</title>
+    <link rel="icon" type="image/png" href="img/logo.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="layout.js"></script>
+  </head>
+  <body>
+    <my-header></my-header>
+  <div id="guru-container"></div>
+
+  <script>
+    const gurus = {
+      "Kepala Sekolah": [
+        { nama: "Kurniawan,S.pd,M.pd", bagian: "Kepala Sekolah", foto: "img/guru/kepsek.png" }
+      ],
+      "Wakil Kepala Sekolah": [
+        { nama: "asmjhdghas", bagian: "Waka Kurikulum", foto: "img/waka.png" },
+        { nama: "asdgasdgasd", bagian: "Waka Kesiswaan", foto: "img/waka.png" }
+      ],
+      "Kepala Program Keahlian": [
+        { nama: "asfsdf", bagian: "PPLG", foto: "img/guru.png" },
+        { nama: "fasdfsdf", bagian: "TJKT", foto: "img/guru.png" }
+      ],
+      "fghfghfghfghfgh": [
+        { nama: "asfsdf", bagian: "PPLG", foto: "img/guru.png" },
+        { nama: "fasdfsdf", bagian: "TJKT", foto: "img/guru.png" }
+      ]
+    };
+
+    const container = document.getElementById("guru-container");
+
+    Object.entries(gurus).forEach(([jabatan, listGurus]) => {
+      const jabatanHeader = document.createElement("div");
+      jabatanHeader.className = "bg-black";
+      jabatanHeader.innerHTML = `
+        <h2 class="text-xl font-semibold py-5 text-white ms-10">${jabatan}</h2>
+      `;
+      container.appendChild(jabatanHeader);
+
+      const div = document.createElement("div");
+      div.className = "flex justify-center gap-10 my-10 flex-wrap";
+
+      listGurus.forEach((guru) => {
+        const wrapper = document.createElement("div");
+        wrapper.className = "relative w-96 my-6";
+
+        const span = document.createElement("span");
+        span.className = "absolute top-2 left-2 w-full h-full bg-black shadow-2xl";
+        wrapper.appendChild(span);
+
+        const card = document.createElement("div");
+        card.className = "relative bg-blue-100 w-full shadow-sm transform transition duration-300 hover:scale-105 hover:shadow-2xl border-2 border-gray-800";
+
+        card.innerHTML = `
+          <div class="h-85 w-full overflow-hidden">
+            <img src="${guru.foto}" alt="${guru.nama}" class="w-full h-full object-cover">
+          </div>
+          <div class="card-body items-center">
+            <h2 class="card-title font-bold">${guru.nama}</h2>
+            <h2 class="card-title">${guru.bagian}</h2>
+          </div>
+        `;
+
+        wrapper.appendChild(card);
+        div.appendChild(wrapper);
+      });
+
+      container.appendChild(div);
+    });
+  </script>
+  <my-footer></my-footer>
+</body>
+</html>
