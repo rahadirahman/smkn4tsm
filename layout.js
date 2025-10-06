@@ -97,7 +97,7 @@ class MyFooter extends HTMLElement {
                 <p>Copyright © 2025 - All right reserved</p>
             </aside>
             <nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-            <a href="rahadi.vercel.app" class="text-gray-500">y</a>
+            <a href="https://rahadi.vercel.app/" class="text-gray-500">y</a>
                 <a href="https://x.com/4smkn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                         class="fill-current">
